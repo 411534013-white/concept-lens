@@ -4,7 +4,7 @@
 - **學生姓名**：白承潤
 - **學生學號**：411534013
 - **報告日期**：2026 年 11 月 03 日
-- **專案開源庫 (GitHub Repository)**：`https://github.com/[你的GitHub帳號]/concept-lens`  
+- **專案開源庫 (GitHub Repository)**：`https://github.com/411534013-white/concept-lens`  
   *(註：依作業規範，GitHub Repo 名稱維持為 concept-lens，不含姓名學號)*
 
 ---
