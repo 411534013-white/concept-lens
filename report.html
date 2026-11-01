@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>期中專題成果報告書 - 白承潤 (411534013)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Serif+TC:wght@400;600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Noto Serif TC', serif;
+    }
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen py-10 px-4">
+
+  <!-- Top Action Bar for User -->
+  <div class="max-w-4xl mx-auto mb-6 flex items-center justify-between no-print bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+    <div class="text-xs text-slate-500">
+      💡 提示：點擊右側按鈕即可一鍵以瀏覽器列印為 <strong>PDF 報告</strong> 或全選複製至 Word。
+    </div>
+    <div class="flex items-center space-x-2">
+      <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-md shadow-indigo-600/20 transition flex items-center space-x-1">
+        <span>另存為 PDF / 列印</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Report Paper Container -->
+  <article class="max-w-4xl mx-auto bg-white p-10 sm:p-16 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-200 leading-relaxed text-slate-800">
+
+    <!-- Header Block -->
+    <header class="border-b-2 border-slate-900 pb-8 mb-8">
+      <div class="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-2">期中專題成果報告書 (30%)</div>
+      <h1 class="text-3xl sm:text-4xl font-black serif-title text-slate-900 leading-tight mb-4">
+        ConceptLens：抽象概念的白話認知透鏡
+      </h1>
+      <p class="text-slate-600 text-base mb-6">
+        A Cognitive Scaffolding System for Abstract Concept Simplification and Active Learning
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <div>
+          <span class="text-slate-400 block mb-0.5">學生姓名</span>
+          <strong class="text-slate-900 text-sm">白承潤</strong>
+        </div>
+        <div>
+          <span class="text-slate-400 block mb-0.5">學生學號</span>
+          <strong class="text-slate-900 text-sm font-mono">411534013</strong>
+        </div>
+        <div>
+          <span class="text-slate-400 block mb-0.5">繳交日期</span>
+          <strong class="text-slate-900 text-sm">2026/11/03</strong>
+        </div>
+        <div>
+          <span class="text-slate-400 block mb-0.5">GitHub 專案庫</span>
+          <strong class="text-indigo-600 text-sm font-mono">concept-lens</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- Abstract -->
+    <section class="mb-10 bg-indigo-50/60 p-6 rounded-2xl border border-indigo-100 text-sm">
+      <h2 class="font-bold text-indigo-900 mb-2 text-base">摘要 (Abstract)</h2>
+      <p class="text-slate-700 leading-relaxed">
+        在高等教育與跨領域自學過程中，「術語黑話（Jargon）」常是阻礙理解的最大阻力，使初學者陷入「字都認得，合在一起卻完全看不懂」的困局。本專案 <strong>ConceptLens</strong> 是一套基於認知科學理論（認知負荷理論、雙重編碼理論與費曼學習法）開發的互動式概念解構系統。利用大語言模型（LLM）的語義轉化能力，將晦澀抽象的概念自動降維轉化為「5歲童生活比喻（ELI5）」、「大學通識運作機制」與「硬核數學本質」三層漸進透鏡，並開創「跨維度比喻轉換器（廚師、遊戲、偵探、運動）」、Mermaid 知識心智圖與主動提取（Active Recall）隨堂快問機制。本報告詳述本專案之產品架構、目標客群、人機協作方法論、學術文獻依據及未來拓展路徑。
+      </p>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="mb-10 space-y-4">
+      <h2 class="text-xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-3">一、做什麼 (What ConceptLens Does)</h2>
+      <p class="text-sm leading-relaxed">
+        ConceptLens 的核心理念取自諾貝爾物理學獎得主理查·費曼（Richard Feynman）名言：<strong>「如果你不能用最簡單的話向外行人解釋清楚，代表你根本還沒有真正搞懂它。」</strong> 本專案旨在將生成式 AI 從單純的「問答機器人」，升級為具備<strong>認知階梯引導力（Cognitive Scaffolding）</strong>的教育透鏡，使抽象知識具象化、結構化、可玩化。
+      </p>
+      
+      <div class="space-y-3 mt-4">
+        <h3 class="font-bold text-sm text-slate-800">1.1 核心功能模組矩陣</h3>
+        <ul class="list-disc pl-5 text-sm space-y-2 text-slate-700">
+          <li><strong>三層費曼認知透鏡 (3-Level Feynman Lens)</strong>：
+            <ul class="list-circle pl-5 mt-1 space-y-1 text-slate-600 text-xs">
+              <li><strong>Level 1 (5 歲白話比喻)</strong>：杜絕學術術語，映射至兒童生活常識（如以「吵雜派對上的神奇聚光燈」比喻注意力機制；以「一對魔法鞋」解釋量子糾纏）。</li>
+              <li><strong>Level 2 (大學通識剖析)</strong>：拆解該技術解決了何種歷史痛點（如 RNN 無法並行且遺忘長程記憶）以及核心機制（如 YouTube 搜尋 Q, K, V 映射）。</li>
+              <li><strong>Level 3 (硬核本質與數學公式)</strong>：KaTeX 即時渲染規範公式，深入分析防爆縮放因子 $\sqrt{d_k}$ 與邊界限制。</li>
+            </ul>
+          </li>
+          <li><strong>跨維度生活比喻轉換器 (Analogy Switcher)</strong>：提供「🍳 頂級大廚配方」、「🎮 RPG 副本組隊」、「🕵️ 福爾摩斯辦案」與「🏀 NBA 球隊戰術」等不同生活語境轉換，破除單一視角思維盲區。</li>
+          <li><strong>動態因果心智圖 (Interactive Mindmap)</strong>：透過 Mermaid.js 動態繪製輸入脈絡、運作核心與輸出應用的拓撲流。</li>
+          <li><strong>直覺考驗小快問 (Active Recall Quiz Engine)</strong>：針對直覺易混淆盲點設計互動單選題，點選即時給予觀念回饋。</li>
+          <li><strong>離線知識庫與即時 LLM 雙模支援</strong>：內建 5 套高擬真預載資料庫（無須聯網即可展示），並支援選填 Gemini API Key 即時解構未知概念。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="mb-10 space-y-4">
+      <h2 class="text-xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-3">二、給誰用 (Target Audience & Use Cases)</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs my-4">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block text-sm mb-1">大專跨領域修課者</strong>
+          <p class="text-slate-600">非本科系學生修讀前沿科技或跨院系課程時，面對晦澀教材常陷入「外在認知超載」，本工具提供最快速的直覺鋪墊。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block text-sm mb-1">自學開發者與科技愛好者</strong>
+          <p class="text-slate-600">面對 AI 論文（如 Attention Is All You Need）時，能在 5 分鐘內建立高保真具象架構，加速實務工程代碼研讀。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block text-sm mb-1">教學講師與知識創作者</strong>
+          <p class="text-slate-600">需要將複雜概念以通俗語言向大眾分享的教育者，可從中獲取多元生動的生活隱喻與教材結構靈感。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="mb-10 space-y-4">
+      <h2 class="text-xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-3">三、怎麼跟 AI 一起做 (Human-AI Collaboration)</h2>
+      <p class="text-sm leading-relaxed text-slate-700">
+        在本專案的開發週期中，AI 並非單純作為「代寫程式碼」的工具，而是被定位為<strong>「認知架構共創者（Cognitive Co-Architect）」</strong>。協同流程分為三大維度：
+      </p>
+      <div class="space-y-3 text-xs text-slate-700">
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-indigo-600 text-sm block mb-1">1. 提示工程與認知架構契約 (Cognitive Schema Contracting)</strong>
+          <p>初期實驗顯示，若單純詢問「請用白話解釋 Transformer」，AI 往往給出冗長且缺乏張力的文字。為此我們共同制定了嚴格的 JSON Schema 約束，強制輸出包含具體實體道具情節（ELI5）、歷史痛點剖析、四大跨域比喻與 Mermaid 箭頭語法，達成精準結構化。</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-indigo-600 text-sm block mb-1">2. 零依賴單頁工程實作 (Zero-Dependency Single-Page Architecture)</strong>
+          <p>考量課堂展示與 GitHub 開源分享便利性，我們採用 Tailwind CDN、Lucide Icons、KaTeX 與 Mermaid.js，打造出無須配置 Node.js 或複雜虛擬環境、雙擊即可完整運行的現代化 Web 原型。</p>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-indigo-600 text-sm block mb-1">3. 教學比喻校準與認知防呆 (Pedagogical Alignment & Anti-Hallucination)</strong>
+          <p>例如在詮釋量子糾纏時，防範大眾常犯的「超光速傳送簡訊」迷思，我們將科學限制反向包裝為隨堂快問的診斷題，使錯誤直覺在答題時被立即矯正。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="mb-10 space-y-4">
+      <h2 class="text-xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-3">四、查了什麼 (Research & Theoretical Foundations)</h2>
+      <p class="text-sm text-slate-700">本專案的設計全面奠基於四項認知科學經典理論：</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-700">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block mb-1">認知負荷理論 (Sweller, 1988)</strong>
+          <p>人類工作記憶容量極為有限。透過生活化比喻消除非必要的外在認知負荷（Extraneous Load），釋放心理能量建構心智基模（Germane Load）。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block mb-1">雙重編碼理論 (Paivio, 1971)</strong>
+          <p>語言與非語言（視覺圖形）為大腦平行的獨立處理通道。將文字比喻與 Mermaid 因果圖併行展示，顯著深化長時記憶儲存。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block mb-1">費曼學習法 (Richard Feynman)</strong>
+          <p>「不能向外行人講明白就是沒搞懂」。透過階梯式降維（5歲兒童 ➔ 通識原理 ➔ 硬核公式），檢證理解深度。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <strong class="text-slate-900 block mb-1">提取練習效應 (Roediger & Karpicke, 2006)</strong>
+          <p>主動提取（Active Recall）遠比反覆劃重點更具記憶保持力。每項概念皆附帶隨堂反思測驗，有效抵禦遺忘曲線。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="mb-10 space-y-4">
+      <h2 class="text-xl font-bold text-slate-900 border-l-4 border-indigo-600 pl-3">五、下一步 (Next Steps & Future Roadmap)</h2>
+      <ul class="list-disc pl-5 text-sm space-y-2 text-slate-700">
+        <li><strong>短期目標：瀏覽器劃詞擴充套件 (Chrome Extension)</strong>：將 ConceptLens 封裝為瀏覽器外掛，在閱讀學術論文或長文時，反白單字即懸浮展現三層透鏡與心智圖。</li>
+        <li><strong>中期目標：多模態蘇格拉底語音對話教練</strong>：支援語音口述作答，由 AI 扮演蘇格拉底進行動態追問，檢視概念邏輯是否嚴密。</li>
+        <li><strong>長期願景：社群共創「人類生活比喻圖譜」</strong>：建立開放式知識庫，讓廣大自學者投稿自己發明的生活絕妙類比，並由社群票選最具啟發性的解釋視角。</li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
+      期中專題成果報告 • 學生：白承潤 (411534013) • 2026/11/03 發表於 E403
+    </footer>
+
+  </article>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
