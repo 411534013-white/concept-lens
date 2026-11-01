@@ -1,8 +1,11 @@
 # ConceptLens：抽象概念的白話認知透鏡
-### 期中專題期末成果報告書 (Midterm Project Report)
+### 期中專題成果報告書 (Midterm Project Report)
 
-> **專案開源庫 (GitHub Repository)**：`https://github.com/[你的GitHub帳號]/concept-lens`  
-> *(註：依規定本報告與 Repo 內無姓名與學號)*
+- **學生姓名**：白承潤
+- **學生學號**：411534013
+- **報告日期**：2026 年 11 月 03 日
+- **專案開源庫 (GitHub Repository)**：`https://github.com/[你的GitHub帳號]/concept-lens`  
+  *(註：依作業規範，GitHub Repo 名稱維持為 concept-lens，不含姓名學號)*
 
 ---
 
