@@ -6,6 +6,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Status: Production Ready](https://img.shields.io/badge/Status-Ready-emerald.svg)]()
 [![Platform: Web](https://img.shields.io/badge/Platform-Web-indigo.svg)]()
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-amber.svg)](https://411534013-white.github.io/concept-lens/)
+
+🌐 **線上即時體驗 (Live Demo)**：[https://411534013-white.github.io/concept-lens/](https://411534013-white.github.io/concept-lens/)  
+🖥️ **線上簡報投影 (Online Slides)**：[https://411534013-white.github.io/concept-lens/slides.html](https://411534013-white.github.io/concept-lens/slides.html)
 
 ---
 
