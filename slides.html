@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConceptLens 專題發表簡報 | 11/03 期中分享</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+      user-select: none;
+    }
+    .slide-active {
+      display: flex !important;
+      opacity: 1 !important;
+      transform: scale(1) !important;
+    }
+    .slide {
+      display: none;
+      opacity: 0;
+      transform: scale(0.98);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex flex-col justify-between overflow-hidden">
+
+  <!-- Top Progress Bar & Header -->
+  <header class="w-full h-14 px-6 flex items-center justify-between border-b border-slate-800/80 bg-slate-900/60 backdrop-blur z-20">
+    <div class="flex items-center space-x-3">
+      <div class="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-black text-xs shadow-md shadow-indigo-500/30">
+        CL
+      </div>
+      <span class="text-xs font-bold text-slate-300 tracking-wider">ConceptLens 專題發表 • 11/03 (E403)</span>
+    </div>
+    
+    <!-- Controls -->
+    <div class="flex items-center space-x-3 text-xs">
+      <span id="slideCounter" class="text-slate-400 font-mono font-semibold px-2.5 py-1 bg-slate-800 rounded-md">1 / 7</span>
+      <button onclick="toggleNotes()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition flex items-center space-x-1" title="開啟講者備忘稿 (快速鍵 N)">
+        <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+        <span class="hidden sm:inline">備忘稿 (N)</span>
+      </button>
+      <button onclick="toggleFullScreen()" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition" title="全螢幕切換 (快速鍵 F)">
+        <i data-lucide="maximize" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Progress Bar Line -->
+  <div class="w-full bg-slate-800 h-1">
+    <div id="progressBar" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-400 h-full w-[14.28%] transition-all duration-300"></div>
+  </div>
+
+  <!-- Main Slide Canvas -->
+  <main class="flex-grow flex items-center justify-center p-6 sm:p-12 relative max-w-6xl mx-auto w-full">
+
+    <!-- Slide 1: Cover -->
+    <div class="slide slide-active flex-col items-center justify-center text-center max-w-4xl w-full">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 text-xs font-semibold mb-6 shadow-inner">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+        <span>期中專題發表 • 用 AI 做出一件能分享給別人的點子</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight mb-6">
+        ConceptLens<br/>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-300 to-amber-400">
+          抽象概念的白話認知透鏡
+        </span>
+      </h1>
+      <p class="text-slate-400 text-base sm:text-xl max-w-2xl leading-relaxed mb-8">
+        打破教科書晦澀術語的牢籠，運用 AI 與認知科學理論，將艱深概念化為「一眼看穿」的互動直覺。
+      </p>
+      <div class="flex items-center space-x-4 text-xs text-slate-500">
+        <span class="flex items-center space-x-1.5">
+          <i data-lucide="terminal" class="w-4 h-4 text-indigo-400"></i>
+          <span>可開箱即用 Web 應用原型</span>
+        </span>
+        <span>•</span>
+        <span class="flex items-center space-x-1.5">
+          <i data-lucide="brain" class="w-4 h-4 text-amber-400"></i>
+          <span>基於費曼學習法與認知負荷理論</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide flex-col justify-center max-w-4xl w-full">
+      <div class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-2 flex items-center space-x-2">
+        <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-400"></i>
+        <span>痛點分析：我們到底為什麼學得這麼痛苦？</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">「讀得懂每一個字，合在一起卻完全看不懂」</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-4">
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <div class="w-10 h-10 rounded-xl bg-rose-950/70 text-rose-400 flex items-center justify-center font-bold mb-4">01</div>
+          <h3 class="font-bold text-lg text-white mb-2">術語黑話的高牆</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            教科書用「術語解釋術語」（例如：用長程依賴解釋注意力），初學者缺乏錨定點，陷入認知超載。
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <div class="w-10 h-10 rounded-xl bg-amber-950/70 text-amber-400 flex items-center justify-center font-bold mb-4">02</div>
+          <h3 class="font-bold text-lg text-white mb-2">缺乏直覺日常生活錨點</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            人腦擅長藉由熟悉場景（做菜、組隊、生活常識）理解新知識，但傳統教材只有冷冰冰的符號與公式。
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800">
+          <div class="w-10 h-10 rounded-xl bg-indigo-950/70 text-indigo-400 flex items-center justify-center font-bold mb-4">03</div>
+          <h3 class="font-bold text-lg text-white mb-2">「自以為懂」的被動假象</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            一直劃螢光筆或重讀筆記，缺乏「主動提取 (Active Recall)」與即時概念檢驗，考卷發下來依然一片空白。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: The Solution -->
+    <div class="slide flex-col justify-center max-w-4xl w-full">
+      <div class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-2 flex items-center space-x-2">
+        <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+        <span>核心解方：什麼是 ConceptLens？</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">三層費曼透鏡 × 跨領域比喻 × 互動自測</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-950/40 to-slate-900 border border-indigo-800/40">
+          <h3 class="text-indigo-300 font-bold text-base flex items-center space-x-2 mb-3">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>3 階漸進式認知階梯</span>
+          </h3>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-amber-400 font-bold">L1:</span>
+              <span><strong>5歲白話比喻</strong>：完全不用術語，用一個生活場景建立概念直覺。</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-indigo-400 font-bold">L2:</span>
+              <span><strong>大學通識剖析</strong>：直擊底層痛點與核心機制（如 Q, K, V 搜尋模型）。</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-emerald-400 font-bold">L3:</span>
+              <span><strong>硬核公式與本質</strong>：完整數學推演、邊界限制與防爆縮放原理。</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+          <h3 class="text-purple-300 font-bold text-base flex items-center space-x-2 mb-3">
+            <i data-lucide="shuffle" class="w-4 h-4"></i>
+            <span>跨維度比喻轉換器 (Analogy Switcher)</span>
+          </h3>
+          <p class="text-xs text-slate-400 mb-3 leading-relaxed">
+            每個人擅長的理解維度不同。ConceptLens 允許使用者一鍵切換視角：
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">🍳 頂級大廚煮高湯</div>
+            <div class="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">🎮 RPG 副本組隊</div>
+            <div class="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">🕵️ 福爾摩斯辦案</div>
+            <div class="p-2.5 rounded-lg bg-slate-800/60 border border-slate-700/60 text-slate-300">🏀 NBA 戰術跑位</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Prototype Demo -->
+    <div class="slide flex-col justify-center max-w-4xl w-full">
+      <div class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-2 flex items-center space-x-2">
+        <i data-lucide="play-circle" class="w-4 h-4 text-emerald-400"></i>
+        <span>作品原型與亮點成果 (Live Demo)</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">輕量、零安裝門檻、即開即用的 Web 應用</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="text-emerald-400 font-bold text-sm mb-2 flex items-center space-x-1.5">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span>開箱即用知識庫</span>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              預載 Transformer 注意力、貝氏定理、量子糾纏、囚徒困境、貨幣通膨等跨學科概念，無須 API 配額即可立刻示範。
+            </p>
+          </div>
+          <span class="text-[11px] text-slate-500 mt-4">Offline First 設計</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="text-indigo-400 font-bold text-sm mb-2 flex items-center space-x-1.5">
+              <i data-lucide="network" class="w-4 h-4"></i>
+              <span>Mermaid 心智動態圖</span>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              以結構化流程圖展示前置概念、計算核心與落地應用的因果流，符合雙重編碼理論 (Dual-Coding)。
+            </p>
+          </div>
+          <span class="text-[11px] text-slate-500 mt-4">視覺心智模型強化</span>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="text-amber-400 font-bold text-sm mb-2 flex items-center space-x-1.5">
+              <i data-lucide="help-circle" class="w-4 h-4"></i>
+              <span>直覺快問 (Active Recall)</span>
+            </div>
+            <p class="text-slate-400 text-xs leading-relaxed">
+              每組概念配備 1~2 題針對直覺誤區的選擇題，點選即給予正誤概念解析，打破偽懂陷阱。
+            </p>
+          </div>
+          <span class="text-[11px] text-slate-500 mt-4">主動提取記憶</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: Collaboration with AI -->
+    <div class="slide flex-col justify-center max-w-4xl w-full">
+      <div class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-2 flex items-center space-x-2">
+        <i data-lucide="cpu" class="w-4 h-4 text-indigo-400"></i>
+        <span>怎麼跟 AI 一起做？(人機協作模式)</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">AI 不只是代寫程式碼，而是認知架構的「共創者」</h2>
+
+      <div class="space-y-4">
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-4">
+          <div class="w-8 h-8 rounded-lg bg-indigo-900/60 text-indigo-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+          <div>
+            <h4 class="text-sm font-bold text-white mb-1">概念降維與比喻調校 (Analogy Refinement)</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              傳統 AI 回答概念常陷入空話。我們透過「結構化 Few-Shot 提示工程」，強迫 AI 把注意力機制與日常經驗（聚光燈、廚師配方）進行一對一對應映射。
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-4">
+          <div class="w-8 h-8 rounded-lg bg-purple-900/60 text-purple-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+          <div>
+            <h4 class="text-sm font-bold text-white mb-1">結構化 JSON 與認知介面自動裝配</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              要求 AI 將任何概念以嚴格規格產出（5歲比喻、機制剖析、公式、四種比喻、Mermaid 圖碼、自測試題），達成前端介面的無縫動態渲染。
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start space-x-4">
+          <div class="w-8 h-8 rounded-lg bg-amber-900/60 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</div>
+          <div>
+            <h4 class="text-sm font-bold text-white mb-1">敏捷的原型迭代 (Rapid Prototyping)</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              借助 AI 快速編寫單檔 Web 原型與簡報系統，大幅縮短開發週期，讓我能把 80% 的精力投注在「教育互動體驗設計」本身。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Research & Theories -->
+    <div class="slide flex-col justify-center max-w-4xl w-full">
+      <div class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-2 flex items-center space-x-2">
+        <i data-lucide="book-open" class="w-4 h-4 text-purple-400"></i>
+        <span>查了什麼？(理論根基與研究佐證)</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">不是天馬行空，而是有認知科學文獻支撐</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+          <span class="text-xs font-bold text-amber-400">John Sweller (1988)</span>
+          <h3 class="text-base font-bold text-white mt-1 mb-2">認知負荷理論 (Cognitive Load Theory)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            外在認知負荷（如難懂的術語符號）會霸佔工作記憶。ConceptLens 藉由生活化比喻，將有限的工作記憶完全釋放給「實質認知負荷 (Germane Load)」，極大化概念內化效率。
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+          <span class="text-xs font-bold text-indigo-400">Richard Feynman</span>
+          <h3 class="text-base font-bold text-white mt-1 mb-2">費曼學習法 (Feynman Technique)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            諾貝爾物理學獎得主理查·費曼的核心理念：「如果你無法用最簡單的語言向一個外行人解釋清楚，代表你根本還沒真正搞懂它。」
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+          <span class="text-xs font-bold text-emerald-400">Allan Paivio (1971)</span>
+          <h3 class="text-base font-bold text-white mt-1 mb-2">雙重編碼理論 (Dual-Coding Theory)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            人腦擁有「語言」與「非語言（視覺圖像）」兩個獨立處理通道。純文字比喻結合 Mermaid 流程圖，能成倍強化概念在大腦中的長效存儲。
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+          <span class="text-xs font-bold text-rose-400">Roediger & Karpicke (2006)</span>
+          <h3 class="text-base font-bold text-white mt-1 mb-2">測試效應 (Testing / Retrieval Effect)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            主動從大腦提取記憶（如快問快答）帶來的學習效果，遠大於反覆閱讀十次。因此每個概念皆配備及時測驗。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Next Steps & Conclusion -->
+    <div class="slide flex-col justify-center max-w-4xl w-full text-center">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-700/60 text-indigo-300 text-xs font-semibold mb-4 mx-auto">
+        <i data-lucide="compass" class="w-3.5 h-3.5 text-indigo-400"></i>
+        <span>下一步展望與總結</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mb-6">讓每個人都能擁有一副「透視本質」的眼睛</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6 text-left">
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <h4 class="text-indigo-400 font-bold text-sm mb-1">1. Chrome 擴充功能化</h4>
+          <p class="text-xs text-slate-400">在閱讀論文或長文時，反白任何艱澀名詞，懸浮視窗即刻啟動費曼透鏡。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <h4 class="text-purple-400 font-bold text-sm mb-1">2. 語音對話探究模式</h4>
+          <p class="text-xs text-slate-400">結合語音輸入，化身蘇格拉底式隨身教練，透過問答逐步啟發思維。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <h4 class="text-amber-400 font-bold text-sm mb-1">3. 社群共創比喻庫</h4>
+          <p class="text-xs text-slate-400">開放使用者投稿自己覺得最神妙的日常生活比喻，投票票選最佳視角。</p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800/80 flex flex-col items-center">
+        <p class="text-slate-400 text-sm mb-2">感謝教授與各位同學校的聆聽！歡迎提問與交流 🚀</p>
+        <span class="text-xs text-slate-500 font-mono">GitHub Repo: concept-lens</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Presenter Notes Bottom Drawer -->
+  <div id="notesDrawer" class="hidden w-full bg-slate-900 border-t border-slate-800 p-4 z-30 transition-all">
+    <div class="max-w-4xl mx-auto flex items-start justify-between">
+      <div class="space-y-1">
+        <div class="flex items-center space-x-2 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+          <span>講者備忘稿 (Presenter Speaking Notes)</span>
+        </div>
+        <p id="speakerNotesText" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <!-- Populated by JS -->
+        </p>
+      </div>
+      <button onclick="toggleNotes()" class="text-slate-500 hover:text-slate-300 ml-4">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Buttons -->
+  <footer class="w-full h-16 px-6 flex items-center justify-between border-t border-slate-800/80 bg-slate-900/60 backdrop-blur z-20">
+    <div class="text-xs text-slate-500 hidden sm:block">
+      使用鍵盤 <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-300 font-mono">←</kbd> / <kbd class="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded text-slate-300 font-mono">→</kbd> 或空白鍵切換投影片
+    </div>
+    <div class="flex items-center space-x-3 ml-auto">
+      <button onclick="prevSlide()" id="prevBtn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-medium text-xs flex items-center space-x-1 transition disabled:opacity-40">
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+        <span>上一頁</span>
+      </button>
+      <button onclick="nextSlide()" id="nextBtn" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-xs flex items-center space-x-1 transition shadow-lg shadow-indigo-600/30">
+        <span>下一頁</span>
+        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    const SPEAKER_NOTES = [
+      "【開場 (15秒)】教授、各位同學好，今天我要分享的期中專題是『ConceptLens：抽象概念的白話認知透鏡』。這是一個用 AI 打造、能打破學術術語高牆、真正把好點子分享給大眾的學習工具。",
+      "【痛點 (30秒)】我們大家一定都有過這種經驗：翻開教科書或學術論文，每個字你都認識，但串成一句話你就完全不知道在講什麼。這是因為傳統教材常犯『用術語解釋術語』的毛病，讓人腦陷入嚴重的認知超載。",
+      "【解方架構 (45秒)】因此我設計了 ConceptLens。它的靈魂在於兩點：第一，三層費曼認知透鏡（5歲童比喻、大學機制拆解、硬核數學公式）；第二，首創『跨維度比喻轉換器』，不管你是喜歡做菜、打遊戲、還是看NBA，AI 都能切換成你最懂的領域來重新詮釋概念。",
+      "【Demo 與亮點 (45秒)】大家可以看到我們的 Prototype：完全零安裝門檻，打開瀏覽器就能直接玩。除了內建 Transformer、貝氏定理、量子糾纏等離線開箱即用資料庫，還整合了 Mermaid 動態心智圖與主動提取小測驗，測出你是不是真的搞懂了。",
+      "【人機協作歷程 (40秒)】在製作這個專題時，我把 AI 當成『認知工程師』。我不是讓它隨便寫幾行字，而是運用 Few-Shot 提示工程與結構化 JSON 規範，引導 AI 提煉出最貼切的生活隱喻，並在幾小時內敏捷架構出高水準的 Web 介面。",
+      "【文獻查證 (30秒)】這個專題背後有紮實的學術基礎：包含了 Sweller 的認知負荷理論、理查·費曼的通俗教學哲學、Paivio 的雙重編碼理論，以及測試效應。每一個介面元件都有認知科學的原理支撐。",
+      "【結論與未來 (20秒)】下一步，我計劃將它打包成瀏覽器擴充套件，並支援語音問答。這就是我希望分享給世界的一個點子：讓 AI 成為我們看穿複雜事物的透鏡。謝謝大家，歡迎提問！"
+    ];
+
+    function showSlide(index) {
+      if (index < 0 || index >= totalSlides) return;
+      slides[currentSlide].classList.remove('slide-active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('slide-active');
+
+      // Update counter & progress
+      document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+      document.getElementById('progressBar').style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+
+      // Update button states
+      document.getElementById('prevBtn').disabled = (currentSlide === 0);
+      document.getElementById('nextBtn').disabled = (currentSlide === totalSlides - 1);
+
+      // Update Speaker Notes
+      document.getElementById('speakerNotesText').textContent = SPEAKER_NOTES[currentSlide];
+
+      lucide.createIcons();
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) showSlide(currentSlide - 1);
+    }
+
+    function toggleNotes() {
+      const drawer = document.getElementById('notesDrawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      } else if (e.key === 'n' || e.key === 'N') {
+        toggleNotes();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullScreen();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      showSlide(0);
+    });
+  </script>
+</body>
+</html>
