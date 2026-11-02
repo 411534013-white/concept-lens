@@ -112,25 +112,34 @@ ConceptLens 的核心理念取自諾貝爾物理學獎得主理查·費曼（Ric
 
 ---
 
-## 四、查了什麼 (Research & Theoretical Foundations)
+## 四、查了什麼 (Research & Investigation)
 
-本專題的設計並非憑空捏造，而是深度奠基於認知心理學與教育科學的四大經典理論：
+為了讓 ConceptLens 不只是天馬行空的想像，而是真正能解決大學生學習痛點的實用工具，我在專題發想與製作過程中，主要進行了兩大層面的資料查閱與調研：
 
-### 4.1 認知負荷理論 (Cognitive Load Theory, CLT)
-- **文獻來源**：Sweller, J. (1988). *Cognitive load during problem solving: Effects on learning*. Cognitive Science, 12(2), 257-285.
-- **應用實踐**：人類工作記憶（Working Memory）容量極其有限（約 4±1 個資訊組塊）。傳統教材充斥大量外在符號，引發嚴重的「外在認知負荷（Extraneous Cognitive Load）」。ConceptLens 透過「5歲日常比喻」降低外在負荷，將大腦認知資源專注於建構心智基模的「實質認知負荷（Germane Cognitive Load）」。
+### 4.1 實務案例與教學工具調研（我具體查閱了哪些資源）
 
-### 4.2 雙重編碼理論 (Dual-Coding Theory)
-- **文獻來源**：Paivio, A. (1971). *Imagery and verbal processes*. New York: Holt, Rinehart and Winston.
-- **應用實踐**：人腦對於語言訊息（Verbal）與視覺圖像訊息（Non-verbal）擁有平行的神經處理通道。單純閱讀文字容易遺忘，而 ConceptLens 在呈現文字比喻的同時，動態渲染 Mermaid 因果流程圖，促成雙通道協同編碼，加深長效記憶鞏固。
+1. **查閱頂級視覺化數學教學案例（3Blue1Brown 與 Khan Academy）**：
+   - 查閱了著名數學科普頻道 3Blue1Brown 的《微積分的本質 (The Essence of Calculus)》系列影片與可汗學院教學資源。
+   - **收穫與啟發**：傳統課本往往直接給予代數公式，而優秀的教學者會將「代數運算還原為幾何直覺」（例如：將乘積法則還原為長方形面積的雙向膨脹、將微分還原為割線斜率收斂為切線）。這啟發我在 ConceptLens 中加入「動態心智圖」與「幾何白話拆解」。
 
-### 4.3 費曼學習法 (The Feynman Technique)
-- **核心論點**：理查·費曼強調四步驟：選擇概念 ➔ 假設向門外漢教學 ➔ 找出卡住與詞窮之處 ➔ 回溯精簡化並利用類比重新表述。
-- **應用實踐**：ConceptLens 的三階透鏡（ELI5 ➔ 通識剖析 ➔ 數學本質）即為費曼學習四步驟的數位介面化實現。
+2. **查閱費曼學習法 (The Feynman Technique) 的核心操作步驟**：
+   - 查閱了物理學家理查·費曼的教學傳記與其倡導的四步學習法（選擇概念 ➔ 假想教給外行人 ➔ 找出卡殼處回溯 ➔ 簡化並運用類比）。
+   - **收穫與啟發**：確認了「能否用 5 歲小孩聽得懂的日常生活用品做比喻」是檢驗真正理解的黃金標準，確立了產品的第一核心功能——「Level 1: 5歲白話透鏡」。
 
-### 4.4 提取練習效應 (Retrieval Practice / Testing Effect)
-- **文獻來源**：Roediger, H. L., & Karpicke, J. D. (2006). *Test-enhanced learning: Taking memory tests improves long-term retention*. Psychological Science, 17(3), 249-255.
-- **應用實踐**：被動重讀（Passive Rereading）是最低效的學習方式，主動從記憶中提取概念（Active Recall）才能顯著延緩遺忘曲線。專案中設置的隨堂快問正是此理論的具體落地。
+3. **實測並調研現有通用 AI（如 ChatGPT、Claude）的教學瓶頸**：
+   - 親自測試拿「請解釋微積分基本定理」、「請解釋特徵向量」直接向通用 LLM 發問。
+   - **收穫與發現**：直接詢問時，AI 通常會直接照搬維基百科或教科書的公式堆疊與專業術語，初學者依然看不懂。這證明了「未經結構化引導的 AI 並不適合自學」，必須透過結構化 Prompt 強迫 AI 進行「烹飪、遊戲、偵探、運動」等跨維度日常生活映射。
+
+4. **查閱網頁端數學與流程圖技術文獻**：
+   - 查閱了 **KaTeX vs MathJax** 的前端排版評測文獻，確認 KaTeX 在純客戶端環境下渲染速度快數倍且無須依賴伺服器，因此選定 KaTeX 作為核心數學公式渲染器。
+   - 查閱了 **Mermaid.js** 的官方語法文件，研究如何用純文字自動繪製出節點清楚的因果關聯圖。
+
+### 4.2 認知科學理論支撐（為什麼這套設計符合大腦學習原理）
+
+在確定產品架構後，我進一步查閱了教育心理學的經典理論，確保每個元件背後皆有科學依據：
+- **認知負荷理論 (Sweller, 1988)**：人腦工作記憶僅能容納 4 個組塊。課本繁重的符號會造成「外在認知超載」；生活比喻能大幅降低門檻，將精力保留給核心概念理解。
+- **雙重編碼理論 (Paivio, 1971)**：大腦同時具備文字與視覺圖像兩個獨立處理通道。純文字比喻配合 Mermaid 因果拓撲圖，可達成雙通道同時編碼，加深長效記憶。
+- **提取練習效應 (Testing / Retrieval Effect, 2006)**：被動反覆看書容易產生「我懂了」的錯覺；每單元設置「隨堂快問」，透過主動提取打破認知假象。
 
 ---
 
