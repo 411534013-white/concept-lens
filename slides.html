@@ -269,42 +269,43 @@
     <!-- Slide 6: Research & Theories -->
     <div class="slide flex-col justify-center max-w-4xl w-full">
       <div class="text-indigo-400 text-xs font-bold uppercase tracking-widest mb-2 flex items-center space-x-2">
-        <i data-lucide="book-open" class="w-4 h-4 text-purple-400"></i>
-        <span>查了什麼？(實務調研與理論依據)</span>
+        <i data-lucide="search" class="w-4 h-4 text-purple-400"></i>
+        <span>查了什麼？(實作中的 3 個真實研究)</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">做這個專題時，我具體查閱了哪些資源與文獻？</h2>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">做這個專題時，我具體查了哪 3 件事？</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-          <span class="text-xs font-bold text-amber-400">教學案例調研</span>
-          <h3 class="text-base font-bold text-white mt-1 mb-1.5">3Blue1Brown《微積分的本質》</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            研究頂尖數學科普頻道如何將抽象公式還原為幾何直覺（如長方形面積雙向生長解釋乘積法則），啟發我打造動態因果心智圖。
-          </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-indigo-950 text-indigo-400 flex items-center justify-center font-bold text-xs mb-3">01</div>
+            <h3 class="text-base font-bold text-white mb-2">微積分怎麼學？<br/>與費曼學習法</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              大一常被符號搞混，上網查大家怎麼學微積分。查到「費曼學習法」強調：如果不能用大白話向外行解釋，代表自己沒真懂。這給了我做生活比喻的核心靈感。
+            </p>
+          </div>
+          <span class="text-[11px] text-indigo-400 mt-4 font-medium">👉 確立產品核心方向</span>
         </div>
 
-        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-          <span class="text-xs font-bold text-indigo-400">方法論查證</span>
-          <h3 class="text-base font-bold text-white mt-1 mb-1.5">費曼學習法 (Feynman Technique)</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            查閱理查·費曼生平與教學哲學，確立「能否用 5 歲小孩聽得懂的語言解釋」作為檢驗真懂的黃金標準（Level 1 透鏡由來）。
-          </p>
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-purple-950 text-purple-400 flex items-center justify-center font-bold text-xs mb-3">02</div>
+            <h3 class="text-base font-bold text-white mb-2">怎麼下 Prompt？<br/>讓 AI 講人話</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              直接問 ChatGPT，它只會像課本一樣抄公式。於是我去查提示詞寫法，研究如何限制 AI「不准用術語」、「強制用做菜或打遊戲當比喻」，成功調出白話解答。
+            </p>
+          </div>
+          <span class="text-[11px] text-purple-400 mt-4 font-medium">👉 解決現有 AI 痛點</span>
         </div>
 
-        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-          <span class="text-xs font-bold text-emerald-400">現有工具實測</span>
-          <h3 class="text-base font-bold text-white mt-1 mb-1.5">實測通用 LLM (ChatGPT) 教學瓶頸</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            實測發現直接問 ChatGPT 微積分，它只會照本宣科列出繁瑣公式。這證明通用 AI 缺乏生活比喻，促使我設計跨維度轉換器。
-          </p>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
-          <span class="text-xs font-bold text-rose-400">技術與理論文獻</span>
-          <h3 class="text-base font-bold text-white mt-1 mb-1.5">KaTeX 數學引擎與認知負荷理論</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            比較 MathJax 與 KaTeX 前端效能，選定純客戶端毫秒級渲染器；並以 Sweller 的認知負荷理論為基礎，用生活比喻釋放學生大腦負擔。
-          </p>
+        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-amber-950 text-amber-400 flex items-center justify-center font-bold text-xs mb-3">03</div>
+            <h3 class="text-base font-bold text-white mb-2">網頁怎麼顯示？<br/>漂亮數學公式與圖表</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              為了讓大家打開網頁就能看到漂亮公式，我去查了前端工具。查到了 KaTeX（一行 CDN 就能快速排版 LaTeX 公式）和 Mermaid.js（用語法自動畫流程圖），順利放進網頁中。
+            </p>
+          </div>
+          <span class="text-[11px] text-amber-400 mt-4 font-medium">👉 實現零依賴展示</span>
         </div>
       </div>
     </div>
@@ -387,7 +388,7 @@
       "【解方架構 (45秒)】因此我設計了 ConceptLens。它的靈魂在於兩點：第一，三層費曼認知透鏡（5歲童比喻、大學機制拆解、硬核數學公式）；第二，首創『跨維度比喻轉換器』，不管你是喜歡做菜、打遊戲、還是看NBA，AI 都能切換成你最懂的領域來重新詮釋概念。",
       "【Demo 與亮點 (45秒)】大家可以看到我們的 Prototype：完全零安裝門檻，打開瀏覽器就能直接玩。特別設立『大學數學專區』，包含微積分的瞬時時速與基本定理、線性代數的特徵向量、泰勒展開式與貝氏定理，還整合了 Mermaid 動態心智圖與隨堂快問，測出你是不是真的搞懂了。",
       "【人機協作歷程 (40秒)】在製作這個專題時，我把 AI 當成『認知工程師』。我不是讓它隨便寫幾行字，而是運用 Few-Shot 提示工程與結構化 JSON 規範，引導 AI 提煉出最貼切的生活隱喻，並在幾小時內敏捷架構出高水準的 Web 介面。",
-      "【查了什麼 (35秒)】在做這個專題時，我主要查了四件事：第一，我調研了 3Blue1Brown 的《微積分的本質》，看頂尖教學者如何把代數公式還原為幾何直覺；第二，我查閱了費曼學習法的具體步驟，確立用 5 歲語言檢驗理解的標準；第三，我實測了 ChatGPT，發現它只會背書給公式，缺乏生活比喻，這啟發我做跨維度轉換器；第四，我比較了前端數學引擎，選用最輕量快速的 KaTeX！",
+      "【查了什麼 (30秒)】在做這個專題時，我實際查了三件事：第一，我上網查微積分到底該怎麼學，查到了『費曼學習法』，確立了用大白話生活比喻做解釋的方向；第二，我查了 Prompt 提示詞技巧，解決直接問 ChatGPT 只會抄課本公式的缺點，逼它用做菜或遊戲打比喻；第三，我查了 KaTeX 和 Mermaid.js 怎麼用，把漂亮的數學公式和流程圖順利放進網頁裡！",
       "【結論與未來 (20秒)】下一步，我計劃將它打包成瀏覽器擴充套件，並支援語音問答。這就是我希望分享給世界的一個點子：讓 AI 成為我們看穿複雜事物的透鏡。謝謝大家，歡迎提問！"
     ];
 
