@@ -93,16 +93,16 @@
   <!-- Main Hero & Search -->
   <main class="flex-grow max-w-5xl w-full mx-auto px-4 py-8 sm:py-12">
     <!-- Header Hero -->
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-200 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-300 text-xs font-medium mb-4">
-        <i data-lucide="brain-circuit" class="w-3.5 h-3.5"></i>
-        <span>基於認知負荷理論與費曼學習法的 AI 解構工具</span>
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-200 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-300 text-xs font-semibold mb-4 shadow-sm">
+        <i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-500"></i>
+        <span>大學數學 × 認知負荷理論 × 費曼學習法</span>
       </div>
       <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight mb-4">
-        把任何艱澀概念，<br/>化為一眼看穿的<span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-amber-500">直覺透鏡</span>
+        把大學數學與艱澀概念，<br/>化為一眼看穿的<span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-amber-500">直覺透鏡</span>
       </h1>
-      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        從 5 歲比喻、架構關係圖，到客製化生活維度拆解，讓學習不再卡在死記硬背。
+      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+        攻克微積分、線性代數與機率統計的符號天書。從 5 歲日常比喻、動態因果心智圖，到客製化跨領域維度拆解，讓學習不再卡在死記硬背。
       </p>
     </div>
 
@@ -114,7 +114,7 @@
           <input 
             type="text" 
             id="conceptInput"
-            placeholder="輸入任何想理解的概念（例：Transformer 注意力機制、貝氏定理、囚徒困境...）" 
+            placeholder="輸入任何大學數學或學術概念（例：特徵向量、泰勒級數、微積分、貝氏定理...）" 
             class="w-full pl-12 pr-28 py-3.5 sm:py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent shadow-lg shadow-slate-200/50 dark:shadow-none text-sm sm:text-base transition"
             required
           />
@@ -130,30 +130,48 @@
       </form>
 
       <!-- Quick Preset Tags -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs">
-        <span class="text-slate-400 font-medium">✨ 熱門概念：</span>
-        <button onclick="loadPreset('calculus_derivative')" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 font-semibold hover:border-indigo-500 transition">
-          🧮 大學微積分：微分與瞬時時速
-        </button>
-        <button onclick="loadPreset('calculus_integral')" class="px-2.5 py-1 rounded-lg bg-purple-50 dark:bg-purple-950/80 border border-purple-200 dark:border-purple-800 text-purple-700 dark:text-purple-300 font-semibold hover:border-purple-500 transition">
-          📐 大學微積分：基本定理與面積
-        </button>
-        <button onclick="loadPreset('transformer')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          🤖 Transformer 注意力
-        </button>
-        <button onclick="loadPreset('bayes')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          📊 貝氏定理
-        </button>
-        <button onclick="loadPreset('quantum_entanglement')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          ⚛️ 量子糾纏
-        </button>
-        <button onclick="loadPreset('prisoners_dilemma')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          ♟️ 囚徒困境
-        </button>
-        <button onclick="loadPreset('inflation')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          💰 通膨與利率
-        </button>
+      <div class="mt-4 space-y-2 text-xs text-center">
+        <!-- University Math Row -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5">
+          <span class="text-indigo-600 dark:text-indigo-400 font-bold flex items-center space-x-1 mr-1">
+            <i data-lucide="sigma" class="w-3.5 h-3.5"></i>
+            <span>大學數學專區：</span>
+          </span>
+          <button onclick="loadPreset('calculus_derivative')" class="px-2.5 py-1 rounded-lg bg-indigo-100/70 dark:bg-indigo-950/90 border border-indigo-300/80 dark:border-indigo-800 text-indigo-800 dark:text-indigo-200 font-semibold hover:border-indigo-500 transition shadow-sm">
+            🧮 微分與瞬時時速
+          </button>
+          <button onclick="loadPreset('calculus_integral')" class="px-2.5 py-1 rounded-lg bg-purple-100/70 dark:bg-purple-950/90 border border-purple-300/80 dark:border-purple-800 text-purple-800 dark:text-purple-200 font-semibold hover:border-purple-500 transition shadow-sm">
+            📐 微積分基本定理
+          </button>
+          <button onclick="loadPreset('linear_algebra_eigen')" class="px-2.5 py-1 rounded-lg bg-sky-100/70 dark:bg-sky-950/90 border border-sky-300/80 dark:border-sky-800 text-sky-800 dark:text-sky-200 font-semibold hover:border-sky-500 transition shadow-sm">
+            🧭 線性代數：特徵向量
+          </button>
+          <button onclick="loadPreset('taylor_series')" class="px-2.5 py-1 rounded-lg bg-amber-100/70 dark:bg-amber-950/90 border border-amber-300/80 dark:border-amber-800 text-amber-800 dark:text-amber-200 font-semibold hover:border-amber-500 transition shadow-sm">
+            📈 泰勒展開式 (積木擬合)
+          </button>
+          <button onclick="loadPreset('bayes')" class="px-2.5 py-1 rounded-lg bg-emerald-100/70 dark:bg-emerald-950/90 border border-emerald-300/80 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 font-semibold hover:border-emerald-500 transition shadow-sm">
+            📊 機率統計：貝氏定理
+          </button>
+        </div>
+
+        <!-- AI & Modern Frontier Row -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5 text-slate-500 dark:text-slate-400">
+          <span class="font-medium mr-1">科技與跨領域：</span>
+          <button onclick="loadPreset('transformer')" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+            🤖 Transformer 注意力
+          </button>
+          <button onclick="loadPreset('quantum_entanglement')" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+            ⚛️ 量子糾纏
+          </button>
+          <button onclick="loadPreset('prisoners_dilemma')" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+            ♟️ 囚徒困境
+          </button>
+          <button onclick="loadPreset('inflation')" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+            💰 通膨與利率
+          </button>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Loading State -->
@@ -495,6 +513,107 @@
             ],
             correct: 0,
             explanation: "歷史上微分來自求速度與切線（幾何局部性），積分來自求面積與體積（全局累積性）。牛頓與萊布尼茲發現微分與積分竟然是『互逆運算』，徹底將幾何求和轉化為代數求導，奠定了整個近代物理與工程的基石！"
+          }
+        ]
+      },
+
+      linear_algebra_eigen: {
+        title: "線性代數：特徵值與特徵向量 (Eigenvalues & Eigenvectors)",
+        subtitle: "空間變換的定海神針：當整個世界被矩陣旋轉拉伸時，誰還能保持方向不變？",
+        category: "大學核心數學 / 線性代數",
+        difficulty: "大一必修靈魂",
+        eli5: {
+          title: "【印在橡皮筋上的小貓鬍鬚】",
+          text: "想像你拿一塊印著貓咪圖案的正方形彈性橡皮布，往右上角用力斜拉扭曲（這在數學上就叫做<strong>矩陣變換</strong>）。<br/><br/>布上的大部分線條都轉動了方向、歪掉了。但神奇的是，<strong>正好有一兩根貓鬍鬚，方向完全沒有偏掉！</strong>它依然頑強指著原本的角度，只是長度被拉長了 3 倍！<br/>這根「死守方向不變」的鬍鬚，就是<strong>特徵向量 (Eigenvector)</strong>；而它被拉長放大的 3 倍倍率，就是<strong>特徵值 (Eigenvalue)</strong>！它就像暴風雨中唯一不轉向的指南針，是整場拉扯變換的靈魂骨架。"
+        },
+        mechanics: {
+          painPoint: "大一學生學線性代數，常常只會機械式地背公式算行列式 det(A - λI) = 0，完全不知道算出來的 λ 跟 v 到底代表什麼，淪為繁重枯燥的符號苦力。",
+          mechanism: "矩陣的本質不是表格，而是「對空間的動態拉伸、旋轉或剪切」。將任意向量 x 輸入矩陣 A，通常會同時改變方向與長度；唯獨「特徵向量 v」在矩陣作用後，只進行純粹的縮放（Av = λv）。透過特徵分解（對角化），可以將複雜的高維空間變換解耦為各自獨立的軸向運算（如 Google PageRank、人臉辨識 PCA 與量子態觀測）。"
+        },
+        math: {
+          formula: "$$A \\vec{v} = \\lambda \\vec{v} \\iff (A - \\lambda I)\\vec{v} = \\vec{0}$$",
+          details: [
+            "A：n × n 的方陣，代表一個高維線性空間變換。",
+            "\\vec{v}：特徵向量 (非零向量)，在變換後方向保持在同一直線上。",
+            "\\lambda：特徵值 (純量純數)，代表該方向被拉伸、壓縮或反轉的倍率。",
+            "\\det(A - \\lambda I) = 0：特徵方程式，要求矩陣降維奇異，方能存在非零解特徵向量。"
+          ]
+        },
+        analogies: {
+          cooking: "【拉麵師傅拉扯麵團】：師傅雙手握住麵團兩端往兩側拉伸。麵團其他地方的氣泡與氣孔都產生了扭曲與旋轉，唯獨師傅雙手正中心連線上的那一束麵筋，方向完全維持水平直線，只是長度被拉長了兩倍！這條水平軸就是這場揉麵變換的特徵向量。",
+          rpg: "【地牢重力風暴陷阱】：Boss 啟動全圖重力扭曲力場，所有玩家都被吹向四面八方並旋轉角度。唯獨戰士朝向正北方逆風衝鋒，他的衝鋒路線完全沒有被吹偏，只是前進速度被狂風壓制成原本的 0.5 倍（特徵值 0.5）。",
+          detective: "【金融洗錢網絡的主幹道】：洗錢集團用數百個帳戶互相匯款進行矩陣式分散轉移。調查員計算該轉帳矩陣的主特徵向量，瞬間穿透上萬筆虛假交易雜訊，鎖定那條唯一持續增長且方向穩定的核心洗錢資金流（Google PageRank 搜尋演算法本質）。",
+          sports: "【花式滑冰的旋轉自轉軸】：選手在冰面上高速自轉並跳躍。選手身體各部位都在空中劃出瘋狂的圓圈旋轉，唯獨穿過頭頂到冰刀中心的那一根垂直軸心線，方向永遠垂直冰面不動——這根旋轉軸就是旋轉矩陣的特徵向量！"
+        },
+        mermaid: `graph LR
+          A["任意輸入向量 x"] --> B["經過矩陣 A 變換"]
+          B --> C["方向旋轉且長度改變 (一般向量)"]
+          D["特徵向量 v"] --> B
+          B --> E["【空間定海神針】方向完全不變！<br/>僅長度縮放 λ 倍：A v = λ v"]
+          style D fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+          style E fill:#dcfce7,stroke:#10b981,stroke-width:2px`,
+        quiz: [
+          {
+            q: "若一個矩陣 A 作用在非零向量 v 上，得到 Av = -2v，這代表什麼幾何意義？",
+            options: [
+              "向量 v 的方向正好反轉 180 度，且長度被放大為原本的 2 倍",
+              "向量 v 憑空消失歸零",
+              "向量 v 旋轉了 90 度垂直",
+              "矩陣 A 計算錯誤"
+            ],
+            correct: 0,
+            explanation: "特徵值 λ = -2 代表特徵向量 v 在同一直線上被拉伸了 2 倍，負號則代表方向沿著同一軸線反轉 180 度，依然屬於特徵向量！"
+          }
+        ]
+      },
+
+      taylor_series: {
+        title: "大學微積分：泰勒展開式 (Taylor Series)",
+        subtitle: "函數世界的樂高積木：如何用最簡單的多項式，完美山寨任何地獄級複雜曲線？",
+        category: "大學核心數學 / 微積分",
+        difficulty: "大一必修核心",
+        eli5: {
+          title: "【盲人摸象與多項式複製術】",
+          text: "想像你要在電腦裡複製一條極度複雜、扭來扭去的山脈輪廓（像 $\\sin(x)$ 或 $e^x$），但電腦只懂最簡單的加減乘除！<br/><br/>泰勒展開式的妙計是：<strong>站在山腳下的單一點，開始向外摸索！</strong><br/>• 第 0 步：先猜高度（常數項 $f(a)$）<br/>• 第 1 步：量出坡度斜率，拉出一條切線直線（一階導數 $f'(a)x$）<br/>• 第 2 步：量出彎曲凹凸弧度，貼上一條拋物線（二階導數 $\\frac{f''(a)}{2!}x^2$）<br/>• 第 3 步：量出彎曲的變化率...<br/>只要階數疊加得越多，這條由簡單多項式拼出來的假山脈，就和真實山脈吻合得嚴絲合縫！"
+        },
+        mechanics: {
+          painPoint: "在工程與科學計算中，三角函數、對數函數與指數函數是無法直接用有限次基本四則運算求出精確值的。計算機之所以能在一微秒內算出 sin(1.234)，靠的全是泰勒展開式的多項式截斷近似！",
+          mechanism: "「一階相切，二階同凹，三階同扭」。只要在特定點 x = a 處，多項式的各階導數與原函數完全一致，那麼在該點附近的任何局部區間，多項式就能以任意給定的精度逼近真實函數。"
+        },
+        math: {
+          formula: "$$f(x) = \\sum_{n=0}^{\\infty} \\frac{f^{(n)}(a)}{n!} (x - a)^n = f(a) + f'(a)(x-a) + \\frac{f''(a)}{2!}(x-a)^2 + \\dots$$",
+          details: [
+            "f^{(n)}(a)：原函數在錨定點 a 處的第 n 階導數，代表曲線的微觀幾何特徵。",
+            "\\frac{1}{n!}：階乘歸一化因子，補償多次求導後乘出來的指數係數。",
+            "(x-a)^n：以 a 為中心的局部基底多項式。",
+            "收斂半徑 R：決定了這個多項式拼圖能夠有效擬合的有效區間範圍。"
+          ]
+        },
+        analogies: {
+          cooking: "【調味復刻秘方】：你想山寨可口可樂的配方。你先調出甜度（常數項），再調出酸度（一階斜率），接著加入氣泡感（二階弧度），最後加入微量香草香氣（三階特徵）。加到第五層，味道已經跟真品毫無二致。",
+          rpg: "【低配顯卡的模型渲染 (LOD)】：遠處的 Boss 只用 10 個多邊形勾勒輪廓（一階展開）；靠近到 50 公尺時加上肌肉凹凸（二階展開）；衝到眼前時連毛孔細節全部渲染（高階泰勒展開）。",
+          detective: "【拼圖側寫嫌犯外貌】：目擊者只記得嫌犯在路燈下的一個剪影。側寫師先定下身高（0階），再定下體態胖瘦傾斜（1階），再勾勒下巴弧線（2階），一步步拼湊出真凶容貌。",
+          sports: "【高爾夫球揮桿軌跡預測】：發球瞬間雷達抓取球的出發點（0階）、初速度（1階斜率）、旋轉產生的馬格納斯弧度（2階），瞬間預測出 200 碼外的落點多項式軌跡。"
+        },
+        mermaid: `graph LR
+          A["複雜未知曲線 f(x)<br/>(如 sin, cos, exp)"] --> B["錨定基準點 a：匹配高度 f(a)"]
+          B --> C["匹配一階切線斜率 f'(a)"]
+          C --> D["匹配二階曲率 f''(a)/2!"]
+          D --> E["加入高階項無限逼近<br/>【化繁為簡：任何函數皆可多項式化】"]
+          style B fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+          style C fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+          style E fill:#dcfce7,stroke:#10b981,stroke-width:2px`,
+        quiz: [
+          {
+            q: "為什麼計算機與手機在計算 sin(0.1) 時，不需要在螢幕裡真的畫一個直角三角形去量長度？",
+            options: [
+              "因為利用泰勒展開式 sin(x) ≈ x - x³/6，只需做簡單的乘法與減法就能得到極高精度結果",
+              "因為計算機裡面偷偷藏了一張完整的百萬頁三角函數表",
+              "因為工程師用猜的",
+              "因為 0.1 永遠等於零"
+            ],
+            correct: 0,
+            explanation: "現代晶片浮點運算單元（FPU）的核心就是泰勒展開式與 CORDIC 演算法！將超越函數轉化為多項式加乘運算，是數值計算的根本靈魂。"
           }
         ]
       },
@@ -947,7 +1066,13 @@
 
       // Check if matches preset keywords
       const lower = query.toLowerCase();
-      if (lower.includes('積分') || lower.includes('integral') || lower.includes('基本定理')) {
+      if (lower.includes('特徵') || lower.includes('eigen') || lower.includes('線性代數') || lower.includes('linear algebra') || lower.includes('矩陣') || lower.includes('matrix')) {
+        loadPreset('linear_algebra_eigen');
+        return;
+      } else if (lower.includes('泰勒') || lower.includes('taylor') || lower.includes('級數') || lower.includes('展開')) {
+        loadPreset('taylor_series');
+        return;
+      } else if (lower.includes('積分') || lower.includes('integral') || lower.includes('基本定理')) {
         loadPreset('calculus_integral');
         return;
       } else if (lower.includes('微積分') || lower.includes('微分') || lower.includes('derivative') || lower.includes('calculus') || lower.includes('極限') || lower.includes('limit')) {
