@@ -132,11 +132,17 @@
       <!-- Quick Preset Tags -->
       <div class="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs">
         <span class="text-slate-400 font-medium">✨ 熱門概念：</span>
+        <button onclick="loadPreset('calculus_derivative')" class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 font-semibold hover:border-indigo-500 transition">
+          🧮 大學微積分：微分與瞬時時速
+        </button>
+        <button onclick="loadPreset('calculus_integral')" class="px-2.5 py-1 rounded-lg bg-purple-50 dark:bg-purple-950/80 border border-purple-200 dark:border-purple-800 text-purple-700 dark:text-purple-300 font-semibold hover:border-purple-500 transition">
+          📐 大學微積分：基本定理與面積
+        </button>
         <button onclick="loadPreset('transformer')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          🤖 Transformer 注意力機制
+          🤖 Transformer 注意力
         </button>
         <button onclick="loadPreset('bayes')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          📊 貝氏定理 (Bayes)
+          📊 貝氏定理
         </button>
         <button onclick="loadPreset('quantum_entanglement')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
           ⚛️ 量子糾纏
@@ -145,7 +151,7 @@
           ♟️ 囚徒困境
         </button>
         <button onclick="loadPreset('inflation')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-          💰 通貨膨脹與利率
+          💰 通膨與利率
         </button>
       </div>
     </div>
@@ -380,6 +386,119 @@
   <script>
     // Knowledge Base with high cognitive quality data
     const KNOWLEDGE_BASE = {
+      calculus_derivative: {
+        title: "微積分：微分與瞬時時速 (Derivative)",
+        subtitle: "大一高數終極啟蒙：為什麼「0 除以 0」的極限，能精確算出跑車當下的瞬間時速？",
+        category: "大學核心數學 / 微積分",
+        difficulty: "大一必修核心",
+        eli5: {
+          title: "【超速照相機與電影底片】",
+          text: "想像你開著賽車從台北開到高雄，總共花了 3 小時開了 300 公里。平均時速是 100 公里對吧？但是高速公路上的<strong>測速照相機</strong>拍下你超速那一瞬間，照片寫著 160 公里！<br/><br/>警察不會管你的「平均速度」，他只在乎你<strong>閃光燈亮起的「那一瞬間」</strong>。可是「瞬間」的時間是 0 秒，行駛距離也是 0 公尺，0 除以 0 不是不能算嗎？<br/>微分的魔法，就是把時間切成比一眨眼還短 1 億倍的微小縫隙 $\\Delta t$，看著距離隨時間縮小的趨勢——這就是<strong>微分</strong>！它讓靜止的瞬間，顯現出動態的變化率。"
+        },
+        mechanics: {
+          painPoint: "古典代數只能計算「靜態直線」或「一段時間的平均值」。當物體在加速（非勻速運動）或曲線上任何一點時，平均速度會把所有的加速細節抹平。牛頓和萊布尼茲為了計算天體運行軌道與加速度，必須突破 0/0 的未定式矛盾。",
+          mechanism: "割線逼近切線 (Secant to Tangent)：取曲線上的兩點 $(x, f(x))$ 與 $(x+\\Delta x, f(x+\\Delta x))$ 連成割線。當 $\\Delta x$ 無限逼近於 0（極限思想），這條割線在幾何上無限收斂為單點的「切線斜率」。切線的傾斜度，正是那一瞬間的瞬時變化率！"
+        },
+        math: {
+          formula: "$$f'(x) = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x) - f(x)}{\\Delta x} = \\frac{df}{dx}$$",
+          details: [
+            "\\Delta x \\to 0：自變數的微小增量逼近於零（但不是剛好等於零，嚴格避開除以零）。",
+            "f(x+\\Delta x) - f(x)：函數在微小區間內的垂直高度變化量 \\Delta y。",
+            "\\lim (極限)：柯西與威爾斯特拉斯建立的 ε-δ 嚴密基石，定義「無限趨近」的數學行為。",
+            "幾何與物理本質：曲線在該點的切線斜率；位置對時間的一階導數即為「瞬時速度」。"
+          ]
+        },
+        analogies: {
+          cooking: "【煎牛排的表面升溫速率】：大廚拿紅外線測溫槍對著牛排。牛排從 50°C 升到 55°C 花了 10 秒，平均每秒升 0.5 度。但如果大廚想知道在「下奶油迷迭香爆香的第 3.5 秒」，鍋底每微秒上升多快（防止焦黑），這就是測量溫度曲線的瞬時一階導數！",
+          rpg: "【刺客出刀瞬間的爆發 DPS】：打王時結算面板顯示你整場「平均秒傷 (Average DPS)」是 5,000。但當王進入虛弱狀態的第 2.1 秒，你開啟狂暴喝下水爆擊，那一瞬間的傷害噴發速率飆到了每秒 80,000！這個瞬時傷害增長率就是對傷害累積函數的「求導」。",
+          detective: "【鑑識科行車記錄器定格破案】：嫌犯辯稱他全程開車很慢。鑑識人員調出每秒 60 幀的監視器錄影，將兩格底片之間（1/60 秒）嫌犯車輪滾動的角度差放大分析，精確算出在撞擊斑馬線瞬間，嫌犯的瞬時速度為 85 km/h，直接戳破謊言。",
+          sports: "【大谷翔平擊球瞬間的球速初速】：棒球打擊不是看球飛了多久，而是在球棒接觸棒球的「0.0007 秒碰撞區間」內，球的位置對時間的急遽變化率——這正是擊球初速 Exit Velocity 的微分物理本質！"
+        },
+        mermaid: `graph LR
+          A["曲線上的兩點：(x, y1) 與 (x+Δx, y2)"] --> B["計算割線斜率：Δy / Δx (平均變化率)"]
+          B --> C["讓 Δx 無限縮小逼近 0 (取極限 Limit)"]
+          C --> D["割線轉動並收斂為單點的【切線 (Tangent)】"]
+          D --> E["切線斜率 = 瞬時變化率 f'(x)<br/>【微分核心誕生】"]
+          style C fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+          style E fill:#dcfce7,stroke:#10b981,stroke-width:2px`,
+        quiz: [
+          {
+            q: "在微積分中，當我們說「某位置函數在 t=3 處的導數是 50」，最準確的物理意義是？",
+            options: [
+              "物體在第 3 秒瞬間的瞬時速度為 50 單位/秒",
+              "物體前 3 秒總共跑了 50 單位距離",
+              "物體的重量是 50 公斤",
+              "物體花了 50 秒才停下來"
+            ],
+            correct: 0,
+            explanation: "位置對時間求一階導數，物理意義就是該時刻的切線斜率，也就是「瞬時速度 (Instantaneous Velocity)」。"
+          },
+          {
+            q: "為什麼導數定義公式中的分母是 lim(Δx→0)，而不是直接把 Δx 帶入 0？",
+            options: [
+              "直接帶入 0 會造成分母為零無意義（0/0 未定式），極限探討的是兩者在縮小過程中的「比值趨勢」",
+              "因為微積分老師規定不能寫 0",
+              "因為 0 在數學上不存在",
+              "為了讓公式看起來更長更難"
+            ],
+            correct: 0,
+            explanation: "在代數中除以零是不合法的（Undefined）。極限 (Limit) 是微積分最偉大的創新：它不要求真正等於 0，而是研究兩者同時縮小至無窮小之際，它們的「變化率比值」收斂到哪一個確定常數。"
+          }
+        ]
+      },
+
+      calculus_integral: {
+        title: "微積分：微積分基本定理 (Fundamental Theorem of Calculus)",
+        subtitle: "數學史上最震撼的統一：求變化率的「逆運算」，竟然能算出任意不規則圖形的累積面積！",
+        category: "大學核心數學 / 微積分",
+        difficulty: "大一必修靈魂",
+        eli5: {
+          title: "【切薄片的巨無霸千層蛋糕與水龍頭】",
+          text: "如果給你一個奇形怪狀的花瓶，問你它肚子裡能裝多少水（體積與面積）？以前的古希臘人只能頭痛拿尺量。<br/><br/>微積分的方法是：<strong>把花瓶想像成千層蛋糕，水平切成 1 萬片薄如蟬翼的圓片！</strong>每小片的體積就像小硬幣一樣容易算（底面積 × 微小厚度 $dx$），再把這 1 萬片全部黏起來（$\\sum \\to \\int$ 黎曼和），就是花瓶的總體積！<br/>更神的是：<strong>「積分」就是把被「微分」切碎的東西全部累積還原回去</strong>。"
+        },
+        mechanics: {
+          painPoint: "古典時代計算不規則面積（如拋物線下的面積）必須用阿基米德窮竭法（Exhaustion Method），每換一個圖形就要發明一套痛苦的幾何奇巧技藝，幾乎無法推廣到通用工程計算。",
+          mechanism: "牛頓與萊布尼茲發現了人類科學史上最驚人的對偶性：累積量函數 $A(x) = \\int_a^x f(t)dt$ 的「增長速度」（導數 $A'(x)$），剛好就等於當下的函數高度 $f(x)$！因此，「求面積」這個看似跟切線毫不相干的幾何問題，居然只要找到 $f(x)$ 的「反導函數 $F(x)$」，頭尾相減 $F(b) - F(a)$ 就能一秒算出！"
+        },
+        math: {
+          formula: "$$\\int_a^b f(x) \\, dx = F(b) - F(a) \\quad \\text{其中 } F'(x) = f(x)$$",
+          details: [
+            "\\int_a^b：拉長的花體 S（代表 Sum 總和），從下限 a 累積加總到上限 b。",
+            "f(x) dx：高為 f(x)、寬為極小微元 dx 的無窮多個矩形微元面積。",
+            "F(x)：被積函數 f(x) 的反導函數（Primitive Function / Antiderivative）。",
+            "核心精髓：將複雜的「無窮無盡連續求和極限」，降維簡化成「反導函數在兩端點的純代數差值」！"
+          ]
+        },
+        analogies: {
+          cooking: "【從水龍頭流量反推浴缸總水量】：水龍頭每秒流出的水流速度忽大忽小（f(t)，瞬時流速）。你不需要用小杯子去一滴一滴量水，你只要看一下浴缸旁邊的水位刻度計（累積函數 F(t)），結束時的水位減去開始時的水位，就是總進水量！",
+          rpg: "【怪物掉落經驗值累積升級】：每打死一隻怪，獲得的經驗值速率不同（f(x)）。你的角色總經驗條（F(x)）從等級 1 升到等級 10 的總經驗差距，就是這段時間所有斬殺經驗值的「定積分」。",
+          detective: "【逃逸車輛的總行駛里程】：嫌犯駕車逃亡，儀表板的指針速度一直在變（v(t)，導數變化）。警方只要取得行車電腦紀錄，把這段速度對時間進行定積分，就能精確還原嫌犯到底開了幾公里、出現在哪一個交流道出口。",
+          sports: "【馬拉松選手的體力消耗總功】：跑坡度起伏的賽道時，每一步克服阻力所消耗的瞬時功率都在變動。將整場 42.195 公里的瞬時功率沿著路程做路徑積分，就能精確計算出跑者消耗的總千卡卡路里。"
+        },
+        mermaid: `graph TD
+          A["曲線下方的不規則面積：難以直接計算"] --> B["切分為 n 個寬度為 dx 的極窄長方形 (黎曼和)"]
+          B --> C["讓寬度 dx 趨近於 0，數量 n 趨近於無限大 (定積分)"]
+          D["【震撼突破：微積分基本定理】<br/>累積面積的變化率恰好是曲線高度 f(x)"]
+          C --> D
+          D --> E["只需找到反導函數 F(x)，計算 F(b) - F(a)<br/>【無窮求和瞬間化為簡單代數減法】"]
+          style B fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+          style D fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+          style E fill:#dcfce7,stroke:#10b981,stroke-width:2px`,
+        quiz: [
+          {
+            q: "微積分基本定理 (Fundamental Theorem of Calculus) 之所以被稱為人類科學史上的奇蹟，最核心的理由是？",
+            options: [
+              "它將看似毫不相干的『切線斜率（微分）』與『圖形面積累積（積分）』建立了互為逆運算的橋樑",
+              "它證明了圓形可以用圓規畫出來",
+              "它發明了加減乘除符號",
+              "它證明了所有函數都可以除以零"
+            ],
+            correct: 0,
+            explanation: "歷史上微分來自求速度與切線（幾何局部性），積分來自求面積與體積（全局累積性）。牛頓與萊布尼茲發現微分與積分竟然是『互逆運算』，徹底將幾何求和轉化為代數求導，奠定了整個近代物理與工程的基石！"
+          }
+        ]
+      },
+
       transformer: {
         title: "Transformer 注意力機制",
         subtitle: "現代大語言模型 (LLM) 如 ChatGPT 能夠理解上下文的基石",
@@ -660,7 +779,7 @@
       }
     };
 
-    let currentConcept = 'transformer';
+    let currentConcept = 'calculus_derivative';
     let currentAnalogyDomain = 'cooking';
     let activeTab = 'lvl1';
 
@@ -828,7 +947,13 @@
 
       // Check if matches preset keywords
       const lower = query.toLowerCase();
-      if (lower.includes('transformer') || lower.includes('注意力') || lower.includes('attention')) {
+      if (lower.includes('積分') || lower.includes('integral') || lower.includes('基本定理')) {
+        loadPreset('calculus_integral');
+        return;
+      } else if (lower.includes('微積分') || lower.includes('微分') || lower.includes('derivative') || lower.includes('calculus') || lower.includes('極限') || lower.includes('limit')) {
+        loadPreset('calculus_derivative');
+        return;
+      } else if (lower.includes('transformer') || lower.includes('注意力') || lower.includes('attention')) {
         loadPreset('transformer');
         return;
       } else if (lower.includes('bayes') || lower.includes('貝氏') || lower.includes('貝葉斯')) {
@@ -1014,7 +1139,7 @@ ${data.math.details.join('\n')}
     }
 
     function resetToHome() {
-      loadPreset('transformer');
+      loadPreset('calculus_derivative');
     }
   </script>
 </body>
