@@ -44,10 +44,10 @@ ConceptLens 的核心理念取自諾貝爾物理學獎得主理查·費曼（Ric
 4. **動態認知心智圖 (Interactive Concept Mindmap)**：
    - 基於 Mermaid.js 自動渲染「輸入脈絡 ➔ 核心本質 ➔ 中間計算機制 ➔ 輸出應用 ➔ 潛在盲點」之因果流程圖，提供視覺化心智錨點。
 
-4. **直覺考驗小快問 (Active Recall Quiz Engine)**：
+5. **直覺考驗小快問 (Active Recall Quiz Engine)**：
    - 為破除「以為自己看懂了」的被動假象，系統針對該概念的核心直覺盲區（常見誤解）設計即時選擇題，答題後立即給予回饋解析，強化神經元提取連結。
 
-5. **離線開箱即用知識庫 + 雲端即時 LLM 雙模驅動 (Hybrid Engine)**：
+6. **離線開箱即用知識庫 + 雲端即時 LLM 雙模驅動 (Hybrid Engine)**：
    - 內建 9 套深度打磨的預載經典跨學科概念，特別設立**【大學數學專區】**：
      - 🧮 **大學微積分**：微分與瞬時時速 (Derivative)
      - 📐 **大學微積分**：微積分基本定理與累積面積 (Fundamental Theorem of Calculus)
