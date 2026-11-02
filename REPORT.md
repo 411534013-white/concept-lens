@@ -38,7 +38,10 @@ ConceptLens 的核心理念取自諾貝爾物理學獎得主理查·費曼（Ric
      - 🕵️ **福爾摩斯辦案**：以現場線索關聯度、監視器車速定格解析因果推論。
      - 🏀 **NBA 球隊戰術**：以戰術跑位、擊球瞬間初速解析協同效應與微分物理。
 
-3. **動態認知心智圖 (Interactive Concept Mindmap)**：
+3. **大學微積分核心公式速查透鏡庫 (Calculus Formula Hub)**：
+   - 彙整大一必考 6 大核心定理與法則（導數極限定義、微積分基本定理、鏈鎖律 Chain Rule、乘積法則 Product Rule、分部積分法 Integration by Parts、泰勒展開式 Taylor Series），使用 KaTeX 數學引擎進行高品質即時排版，每一道公式皆附帶符號拆解與幾何生活大白話解碼。
+
+4. **動態認知心智圖 (Interactive Concept Mindmap)**：
    - 基於 Mermaid.js 自動渲染「輸入脈絡 ➔ 核心本質 ➔ 中間計算機制 ➔ 輸出應用 ➔ 潛在盲點」之因果流程圖，提供視覺化心智錨點。
 
 4. **直覺考驗小快問 (Active Recall Quiz Engine)**：
